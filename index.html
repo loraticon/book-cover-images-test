@@ -132,7 +132,7 @@
   <button class="bg" onclick="setBackground('black', this)">검정 배경</button>
   <button class="bg" onclick="setBackground('transparent', this)">투명 배경</button>
   <button class="bg" onclick="toggleColorPicker()">🎨</button>
-  <input type="color" id="colorPicker">
+  <input type="color" id="colorPicker"/>
   <span id="colorCode"></span>
   <button class="download" onclick="downloadImage()">이미지 다운로드</button>
 </div>
@@ -272,7 +272,7 @@
     selectedBackground = e.target.value;
     colorCode.textContent = selectedBackground.toUpperCase();
     document.querySelectorAll('.bg').forEach(btn => btn.classList.remove('active'));
-    if (uploadedImage) drawImage();
+    drawImage();
   });
 </script>
 
