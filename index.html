@@ -265,7 +265,11 @@
   }
 
   function toggleColorPicker() {
-    colorPicker.click();
+    if (colorPicker.style.display === "none") {
+    colorPicker.style.display = "inline-block";
+   } else {
+    colorPicker.style.display = "none";
+   } 
   }
 
   colorPicker.addEventListener('input', (e) => {
