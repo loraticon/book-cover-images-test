@@ -132,7 +132,7 @@
   <button class="bg" onclick="setBackground('black', this)">검정 배경</button>
   <button class="bg" onclick="setBackground('transparent', this)">투명 배경</button>
   <form>  
-    <input type="color" id="colorPicker" name="color" value="#FF0000" class="keep-on-reset" />
+    <input type="color" id="colorPicker" name="color" value="#FF0000" />
   </form>  
   <span id="colorCode"></span>
   <button class="download" onclick="downloadImage()">이미지 다운로드</button>
@@ -256,26 +256,14 @@
   }
 
   function resetImage() {
-  // 이미지 관련 상태 초기화
-  uploadedImage = null;
-  urlInput.value = "";
-  preview.src = "";
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // 컬러 초기화
-  colorPicker.value = "#ffffff";
-  colorPicker.style.display = "none";
-  colorCode.textContent = "";
-
-  // 컬러피커 버튼은 유지하고 나머지만 삭제
-  const container = document.getElementById('widgetContainer');
-  const children = Array.from(container.children);
-  children.forEach(child => {
-    if (!child.classList.contains('keep-on-reset')) {
-      container.removeChild(child);
-    }
-  });
-}
+    uploadedImage = null;
+    urlInput.value = "";
+    preview.src = "";
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    colorPicker.value = "#ffffff";
+    colorPicker.style.display = "none";
+    colorCode.textContent = "";
+  }
 
   function toggleColorPicker() {
     colorPicker.click();
